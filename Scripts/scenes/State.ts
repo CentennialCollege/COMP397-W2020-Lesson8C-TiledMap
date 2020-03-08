@@ -6,6 +6,7 @@ module scenes
         START,
         PLAY,
         END,
+        TILED,
         NUM_OF_SCENES
     }
 }

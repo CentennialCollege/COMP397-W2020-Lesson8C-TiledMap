@@ -20,7 +20,7 @@ module scenes
         // PRIVATE METHODS
 
         // PUBLIC METHODS
-        public Start(): void 
+        public Start(): void
         {
              //instantiate a new Text object
             this._welcomeLabel = new objects.Label("The Game", "80px", "Consolas", "#FFFF00", 320, 180, true);
@@ -28,21 +28,22 @@ module scenes
              this._startButton = new objects.Button(config.Game.ASSETS.getResult("startButton"), 320, 430, true);
 
              this._ocean = new objects.Ocean();
+
             this.Main();
-        }        
-        
-        public Update(): void 
+        }
+
+        public Update(): void
         {
            this._ocean.Update();
         }
-        
-        public Main(): void 
+
+        public Main(): void
         {
             this.addChild(this._ocean);
-       
+
             this.addChild(this._welcomeLabel);
 
-        
+
             this.addChild(this._startButton);
 
             this._startButton.on("click", ()=>{
@@ -51,6 +52,6 @@ module scenes
 
         }
 
-        
+
     }
 }
