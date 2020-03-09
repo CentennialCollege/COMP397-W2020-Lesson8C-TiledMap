@@ -70,9 +70,13 @@ module objects
     {
       for (let index = 0; index < this._data.length; index++)
       {
-        if(this._data[index] != "-1")
+        if((this._data[index] != "-1") && (this._data[index] != "-1\r"))
         {
           let data = this._data[index];
+          if(data.slice(-1) == "\r")
+          {
+            data = data.slice(0, -1);
+          }
           let sprite = new createjs.Sprite(this._spriteSheet, data);
           this._tiles[index] = sprite;
         }

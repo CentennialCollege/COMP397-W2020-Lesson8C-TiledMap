@@ -60,8 +60,11 @@ var objects;
         };
         Grid.prototype.buildTiles = function () {
             for (var index = 0; index < this._data.length; index++) {
-                if (this._data[index] != "-1") {
+                if ((this._data[index] != "-1") && (this._data[index] != "-1\r")) {
                     var data = this._data[index];
+                    if (data.slice(-1) == "\r") {
+                        data = data.slice(0, -1);
+                    }
                     var sprite = new createjs.Sprite(this._spriteSheet, data);
                     this._tiles[index] = sprite;
                 }
